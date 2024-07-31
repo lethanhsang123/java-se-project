@@ -1,0 +1,9 @@
+1. Simple Cryptography with character arrays:
+- An important application of character arrays and string is CRYPTOGRAPHY, which is the science of secret message.
+- Process of encryption, in which is message, called the PLAINTEXT, is converted into a scrambled message,
+called the CIPHERTEXT.
+- Earliest encryption scheme is the Caesar cipher, is simple way to obscure(không rõ ràng) message witten in a language
+that forms words with alphabet.
+
+2. Converting between strings and character arrays:
+
