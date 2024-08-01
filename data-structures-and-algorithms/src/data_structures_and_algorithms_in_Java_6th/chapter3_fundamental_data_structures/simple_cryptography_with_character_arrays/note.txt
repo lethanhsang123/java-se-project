@@ -6,4 +6,12 @@ called the CIPHERTEXT.
 that forms words with alphabet.
 
 2. Converting between strings and character arrays:
-
+3. Using character arrays as replacement codes:
+- If we were to number our letters like array indices, so that A is 0, B is 1, C is 2, then
+  we can represent the replacement rule as a character array, encoder, such that A is
+  mapped to encoder[0], B is mapped to encoder[1], and so on
+- Then, in order to find a replacement for a character in our Caesar cipher, we need to map the characters
+  from A to Z to the respective numbers from 0 to 25
+- The process of decrypting the message can be implemented by simply using
+  a different character array to represent the replacement rule—one that effectively
+  shifts characters in the opposite direction.
