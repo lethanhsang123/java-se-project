@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.using_arrays;
+package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.arrays.using_arrays;
 
 public class GameEntry {
     private String name;    // name of the person earning this score

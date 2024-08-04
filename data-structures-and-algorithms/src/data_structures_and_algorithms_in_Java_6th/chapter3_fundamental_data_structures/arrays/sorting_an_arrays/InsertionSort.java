@@ -1,7 +1,6 @@
-package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.sorting_an_arrays;
+package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.arrays.sorting_an_arrays;
 
 import java.util.Arrays;
-import java.util.Objects;
 import java.util.Random;
 
 public class InsertionSort {

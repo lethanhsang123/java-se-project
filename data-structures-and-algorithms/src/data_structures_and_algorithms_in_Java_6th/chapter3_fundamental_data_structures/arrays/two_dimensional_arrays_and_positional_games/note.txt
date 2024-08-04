@@ -1,0 +1,6 @@
+- Two-dimensional array, where we use two indices, say i and j, to refer to the cells in the array.
+The first index usually refers to a row number and the second to a column number.
+- Arrays in Java are one-dimensional, use a single index to access each cell of an array.
+We can create a two-dimensional array as an array of arrays. Such a two-dimensional array is sometimes also called a matrix.
+-
+

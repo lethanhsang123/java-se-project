@@ -1,4 +1,4 @@
-package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.simple_cryptography_with_character_arrays;
+package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.arrays.simple_cryptography_with_character_arrays;
 
 /**
  * Class for doing encryption and decryption using the Caesar Cipher
