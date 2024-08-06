@@ -1,0 +1,5 @@
+- Linked lists are traditionally viewed as storing a sequence of items in a linear order, from first to last.
+- However, there are many applications in which data can be more naturally viewed as having a cyclic order,
+    with well-defined neighboring relationships, but no fixed beginning or end.
+
+
