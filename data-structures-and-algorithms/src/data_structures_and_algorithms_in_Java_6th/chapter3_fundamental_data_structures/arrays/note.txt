@@ -1,0 +1,3 @@
+- Arrays are great for storing things in a certain order, get value, get by index
+- Drawback: The capacity of the array must be fixed when it is created, and insertions
+            and deletions at interior positions of an array can be time consuming if many elements must be shifted
