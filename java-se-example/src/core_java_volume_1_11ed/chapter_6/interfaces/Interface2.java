@@ -17,6 +17,9 @@ public interface Interface2 {
     }
 
     default void test6() {
+        test2();
+        test3();
+        test5();
         this.test4();
         System.out.println("Test 6 Interface 2");
     }

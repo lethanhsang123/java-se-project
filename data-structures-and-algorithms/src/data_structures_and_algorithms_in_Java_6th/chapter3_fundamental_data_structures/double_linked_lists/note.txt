@@ -1,0 +1,19 @@
+- doubly linked list: linked list in which each node keeps an explicit reference to the node before it
+    and a reference to the node after it. Such a structure
+- These lists allow a greater variety of O(1)-time update operations, including insertions and deletions
+    at arbitrary positions within the list. We continue to use the term “next” for the reference to the
+    node that follows another, and we introduce the term “prev” for the reference to the node that precedes it
+- In order to avoid some special cases when operating near the boundaries of a doubly linked list,
+    it helps to add special nodes at both ends of the list: a header node at the
+    beginning of the list, and a trailer node at the end of the list. These “dummy” nodes
+    are known as sentinels (or guards), and they do not store elements of the primary sequence.
+    A doubly linked list with such sentinels is shown in Figure 3.19.
+- When using sentinel nodes, an empty list is initialized so that the next field of the header points to the trailer,
+    and the prev field of the trailer points to the header; the remaining fields of the sentinels are irrelevant
+- For a nonempty list, the header’s next will refer to a node containing the first real element of a sequence,
+    just as the trailer’s prev references the node containing the last element of a sequence.
+- Advantage of Using Sentinels: we could implement a doubly linked list without sentinel nodes (singly linked list),
+    the slight extra memory devoted to the sentinels greatly simplifies the logic of our operations.
+    Most notably, the header and trailer nodes never change—only the nodes between them change.
+    Furthermore, we can treat all insertions in a unified manner, because a new node will always be placed between a pair of existing nodes.
+    In similar fashion, every element that is to be deleted is guaranteed to be stored in a node that has neighbors on each side
