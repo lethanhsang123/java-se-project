@@ -1,7 +1,5 @@
 package data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.circularly_linked_lists;
 
-import data_structures_and_algorithms_in_Java_6th.chapter3_fundamental_data_structures.singly_linked_list.SingleLinkedList;
-
 public class CircularlyLinkedList<E> {
 
     private Node<E> tail = null;
