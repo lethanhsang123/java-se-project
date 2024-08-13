@@ -13,7 +13,7 @@ public class Main {
         List<String> test2 = new LinkedList<>();
         test2.removeIf((e) -> e == null);
 
-        Objects.requireNonNullElseGet()
+//        Objects.requireNonNullElseGet()
 
     }
 }
