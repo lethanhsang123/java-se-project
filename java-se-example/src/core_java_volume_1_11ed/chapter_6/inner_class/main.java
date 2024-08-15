@@ -34,10 +34,15 @@ class TalkingClock {
 
     public class TimePrinter implements ActionListener {
 
+        private Integer count = 1;
+        static String a = "";
+
         @Override
         public void actionPerformed(ActionEvent actionEvent) {
+            System.out.println("Beep: " + beep);
             System.out.println("At the tone, the time is " + Instant.ofEpochSecond(actionEvent.getWhen()));
             if (beep) Toolkit.getDefaultToolkit().beep();
+            beep = !beep;
         }
     }
 }
