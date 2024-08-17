@@ -1,4 +1,4 @@
-package object_oriented_design_and_analysis.sec01_guitar_app;
+package object_oriented_design_and_analysis.sec01_well_designed_apps_rock;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -13,8 +13,8 @@ public class Inventory {
     }
 
     public void addGuitar(String serialNumber, double price, Builder builder, String model,
-                          Type type, Wood backWood, Wood topWood) {
-        Guitar guitar = new Guitar(serialNumber, price, new GuitarSpec(builder, model, type, backWood, topWood));
+                          Type type, Wood backWood, Wood topWood, int numStrings) {
+        Guitar guitar = new Guitar(serialNumber, price, new GuitarSpec(builder, model, type, backWood, topWood, numStrings));
         this.guitars.add(guitar);
     }
 
@@ -33,20 +33,7 @@ public class Inventory {
         for (Iterator i = this.guitars.iterator(); i.hasNext();) {
             Guitar guitar = (Guitar) i.next();
             GuitarSpec guitarSpec = guitar.getSpec();
-            if (searchSpec.getBuilder() != guitarSpec.getBuilder()) {
-                continue;
-            }
-            String model = searchSpec.getModel().toLowerCase();
-            if ( (model != null) && (!model.equals("") && (!model.equals(guitarSpec.getModel().toLowerCase())) ) ) {
-                continue;
-            }
-            if (searchSpec.getType() != guitarSpec.getType()) {
-                continue;
-            }
-            if (searchSpec.getBackWood() != guitarSpec.getBackWood()) {
-                continue;
-            }
-            if (searchSpec.getTopWood() != guitarSpec.getTopWood()) {
+            if (!guitarSpec.matches(searchSpec)) {
                 continue;
             }
             matchingGuitars.add(guitar);

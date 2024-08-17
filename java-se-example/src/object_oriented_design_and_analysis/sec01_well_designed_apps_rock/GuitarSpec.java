@@ -1,4 +1,4 @@
-package object_oriented_design_and_analysis.sec01_guitar_app;
+package object_oriented_design_and_analysis.sec01_well_designed_apps_rock;
 
 public class GuitarSpec {
 
@@ -8,12 +8,15 @@ public class GuitarSpec {
     private Wood backWood;
     private Wood topWood;
 
-    public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood) {
+    private int numStrings;
+
+    public GuitarSpec(Builder builder, String model, Type type, Wood backWood, Wood topWood, int numStrings) {
         this.builder = builder;
         this.model = model;
         this.type = type;
         this.backWood = backWood;
         this.topWood = topWood;
+        this.numStrings = numStrings;
     }
 
     public Builder getBuilder() {
@@ -34,5 +37,14 @@ public class GuitarSpec {
 
     public Wood getTopWood() {
         return topWood;
+    }
+
+    public int getNumStrings() {
+        return numStrings;
+    }
+
+    public boolean matches(GuitarSpec otherSpec) {
+        // Todo: Implementation Businesss
+        return true;
     }
 }
