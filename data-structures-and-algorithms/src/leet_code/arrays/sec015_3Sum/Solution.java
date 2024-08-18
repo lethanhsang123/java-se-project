@@ -1,5 +1,6 @@
 package leet_code.arrays.sec015_3Sum;
 
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ class Solution {
     }
 
     public boolean isDuplicate(List<List<Integer>> numsList, List<Integer> nums) {
-        return numsList.stream().anyMatch(nums::containsAll);
+        return numsList.stream().anyMatch(integers -> integers.containsAll(nums));
     }
 
     public static void main(String[] args) {
