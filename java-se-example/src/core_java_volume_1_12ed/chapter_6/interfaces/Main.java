@@ -1,8 +1,7 @@
-package core_java_volume_1_11ed.chapter_6.interfaces;
+package core_java_volume_1_12ed.chapter_6.interfaces;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {

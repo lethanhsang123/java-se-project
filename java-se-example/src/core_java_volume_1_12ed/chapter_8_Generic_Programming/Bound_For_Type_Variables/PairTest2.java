@@ -1,6 +1,6 @@
-package core_java_volume_1_11ed.chapter_8_Generic_Programming.Bound_For_Type_Variables;
+package core_java_volume_1_12ed.chapter_8_Generic_Programming.Bound_For_Type_Variables;
 
-import core_java_volume_1_11ed.chapter_8_Generic_Programming.Define_Simple_Generic_Class.Pair;
+import core_java_volume_1_12ed.chapter_8_Generic_Programming.Define_Simple_Generic_Class.Pair;
 
 import java.time.LocalDate;
 

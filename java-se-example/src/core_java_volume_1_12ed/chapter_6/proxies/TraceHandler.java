@@ -1,4 +1,4 @@
-package core_java_volume_1_11ed.chapter_6.proxies;
+package core_java_volume_1_12ed.chapter_6.proxies;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
