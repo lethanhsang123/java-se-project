@@ -1,0 +1,31 @@
+@startuml
+class Remote {
+void pressButton()
+}
+
+class BarkRecognizer {
+void test()
+}
+
+class DogDoor {
+boolean open
+void open()
+void close()
+boolean isOpen()
+addAllowedBark(Bark)
+Bark[*] getAllowedBarks()
+}
+
+class Bark {
+String sound
+String getSound()
+boolean equal(Bark)
+}
+
+
+Remote --> "1" DogDoor : door
+BarkRecognizer --> "1" DogDoor : door
+DogDoor --> "*" Bark : allowedBarks
+
+
+@enduml

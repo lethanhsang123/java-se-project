@@ -9,7 +9,7 @@ public class Remote {
     }
 
     public void pressButton() {
-        System.out.println("Pressing the remote control button...");
+        System.out.println("Thread(" + Thread.currentThread().getName() + "):Pressing the remote control button...");
         if (door.isOpen()) {
             door.close();
         } else {
