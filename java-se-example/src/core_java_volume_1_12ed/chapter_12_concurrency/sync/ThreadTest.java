@@ -1,4 +1,6 @@
-package core_java_volume_1_12ed.chapter_12_concurrency;
+package core_java_volume_1_12ed.chapter_12_concurrency.sync;
+
+import core_java_volume_1_12ed.chapter_12_concurrency.thread.Bank;
 
 public class ThreadTest {
     public static final int DELAY = 10;

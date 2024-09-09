@@ -1,8 +1,12 @@
-package core_java_volume_1_12ed.chapter_12_concurrency;
+package core_java_volume_1_12ed.chapter_12_concurrency.sync.lock_object;
 
 import java.util.Arrays;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Bank {
+
+    private Lock bankLock = new ReentrantLock();
 
     private final double[] accounts;
 
@@ -23,19 +27,24 @@ public class Bank {
      * @param amount the amount to transfer
      */
     public void transfer(int from, int to, double amount) {
-        if ( accounts[from] < amount ) return;
-        System.out.println(Thread.currentThread());
-        accounts[from] -= amount;
-        System.out.printf(" %10.2f from %d to %d", amount, from, to);
-        accounts[to] += amount;
-        System.out.printf(" Total Balance: %10.2f%n", getTotalBalance());
+        bankLock.lock();
+        try {
+            if (accounts[from] < amount) return;
+            System.out.println(Thread.currentThread());
+            accounts[from] -= amount;
+            System.out.printf(" %10.2f from %d to %d", amount, from, to);
+            accounts[to] += amount;
+            System.out.printf(" Total Balance: %10.2f%n", getTotalBalance());
+        } finally {
+            bankLock.unlock();
+        }
     }
 
     /**
      * Gets the number of accounts in the bank
      * @return the number of accounts
      */
-    private int size() {
+    public int size() {
         return accounts.length;
     }
 
