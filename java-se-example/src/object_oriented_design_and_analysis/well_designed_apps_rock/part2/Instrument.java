@@ -1,12 +1,13 @@
-package object_oriented_design_and_analysis.well_designed_apps_rock;
+package object_oriented_design_and_analysis.well_designed_apps_rock.part2;
 
-public class Guitar {
+public abstract class Instrument {
 
-    private String serialNumber;
+    private final String serialNumber;
     private double price;
-    private GuitarSpec spec;
 
-    public Guitar(String serialNumber, double price, GuitarSpec spec) {
+    private final InstrumentSpec spec;
+
+    public Instrument(String serialNumber, double price, InstrumentSpec spec) {
         this.serialNumber = serialNumber;
         this.price = price;
         this.spec = spec;
@@ -20,11 +21,11 @@ public class Guitar {
         return price;
     }
 
-    public GuitarSpec getSpec() {
-        return spec;
-    }
-
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public InstrumentSpec getSpec() {
+        return spec;
     }
 }

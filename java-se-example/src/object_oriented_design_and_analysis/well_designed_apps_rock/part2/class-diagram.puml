@@ -1,0 +1,81 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Inventory {
+Instrument instrument
+
+addInstrument(String, double, InstrumentSpec)
+get(String)
+search(GuitarSpec): Guitar[]
+search(MandolinSpec): Mandolin[]
+}
+
+abstract class Instrument {
+String serialNumber
+double price
+InstrumentSpec spec
+
+getSerialNumber(): String
+getPrice(): double
+setPrice(float)
+getSpec(): InstrumentSpec
+}
+
+class Guitar {}
+
+class Mandolin {}
+
+abstract class InstrumentSpec {
+String model
+Builder builder
+Type type
+Wood wood
+
+getBuilder(): Builder
+getModel(): String
+getType(): Type
+getBackWood(): Wood
+getTopWood(): Wood
+matches(InstrumentSpec): boolean
+}
+
+class GuitarSpec {
+int numStrings
+
+getNumStrings(): int
+matches(GuitarSpec): boolean
+}
+
+class MandolinSpec {
+Style style
+
+getStyle(): Style
+matches(GuitarSpec): boolean
+}
+
+class Builder {
+toString(): String
+}
+class Type {
+toString(): String
+}
+class Wood {
+toString(): String
+}
+class Style {
+toString(): String
+}
+
+
+Instrument <|-- Guitar
+Instrument <|-- Mandolin
+InstrumentSpec <|-- GuitarSpec
+InstrumentSpec <|-- MandolinSpec
+Instrument o-- "1" InstrumentSpec
+Inventory --> "*" Instrument
+InstrumentSpec --> "1" Builder
+InstrumentSpec --> "1" Type
+InstrumentSpec --> "1" Wood
+MandolinSpec --> "1" Style
+
+@enduml

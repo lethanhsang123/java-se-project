@@ -1,4 +1,8 @@
-package object_oriented_design_and_analysis.well_designed_apps_rock;
+package object_oriented_design_and_analysis.well_designed_apps_rock.part1;
+
+import object_oriented_design_and_analysis.well_designed_apps_rock.Builder;
+import object_oriented_design_and_analysis.well_designed_apps_rock.Type;
+import object_oriented_design_and_analysis.well_designed_apps_rock.Wood;
 
 import java.util.Iterator;
 import java.util.LinkedList;

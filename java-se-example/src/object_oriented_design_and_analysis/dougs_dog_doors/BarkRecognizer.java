@@ -11,7 +11,7 @@ public class BarkRecognizer {
     }
 
     public void recognize(Bark bark) {
-        System.out.println("Thread(" + Thread.currentThread().getName() + ") BarkRecognizer: Heard a '" + bark.getSound() + "'");
+        System.out.println("Thread(" + Thread.currentThread().getName() + "): BarkRecognizer Heard a '" + bark.getSound() + "'");
         List<Bark> allowedBarks = door.getAllowedBark();
         if (allowedBarks.stream().anyMatch(bark::equals)){
             door.open();

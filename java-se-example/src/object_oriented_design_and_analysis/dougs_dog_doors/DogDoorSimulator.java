@@ -19,8 +19,8 @@ public class DogDoorSimulator {
         System.out.println("\nThread(" + Thread.currentThread().getName() + "):Bruce has gone outside...");
 
         try {
-            Thread.currentThread().wait(10_000);
-        } catch (InterruptedException exception) {}
+            Thread.sleep(10_000);
+        } catch (InterruptedException ignored) {}
 
         System.out.println("\nThread(" + Thread.currentThread().getName() + "):Bruce's all done...");
         System.out.println("Thread(" + Thread.currentThread().getName() + "):...but he's stuck outside!");
@@ -31,8 +31,8 @@ public class DogDoorSimulator {
         recognizer.recognize(smallDogBark);
 
         try {
-            Thread.currentThread().wait(5_000);
-        } catch (InterruptedException e) {}
+            Thread.sleep(5_000);
+        } catch (InterruptedException ignored) {}
 
         // Simulate the hardware hearing a bark again
         System.out.println("Thread(" + Thread.currentThread().getName() + "):Bruce starts barking.");
