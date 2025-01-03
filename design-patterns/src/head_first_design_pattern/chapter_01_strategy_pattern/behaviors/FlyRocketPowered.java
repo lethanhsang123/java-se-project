@@ -1,4 +1,4 @@
-package chapter_01_intro_design_pattern.behaviors;
+package head_first_design_pattern.chapter_01_strategy_pattern.behaviors;
 
 public class FlyRocketPowered implements FlyBehavior {
     @Override

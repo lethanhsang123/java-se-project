@@ -1,6 +1,6 @@
-package chapter_01_intro_design_pattern;
+package head_first_design_pattern.chapter_01_strategy_pattern;
 
-import chapter_01_intro_design_pattern.behaviors.FlyRocketPowered;
+import head_first_design_pattern.chapter_01_strategy_pattern.behaviors.FlyRocketPowered;
 
 public class MiniDuckSimulator {
 

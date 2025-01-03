@@ -1,7 +1,7 @@
-package chapter_02_observer_pattern.subject;
+package head_first_design_pattern.chapter_02_observer_pattern.subject;
 
 
-import chapter_02_observer_pattern.observer.Observer;
+import head_first_design_pattern.chapter_02_observer_pattern.observer.Observer;
 
 public interface Subject {
 

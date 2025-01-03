@@ -1,7 +1,7 @@
-package chapter_02_observer_pattern;
+package head_first_design_pattern.chapter_02_observer_pattern;
 
-import chapter_02_observer_pattern.observer.CurrentConditionsDisplay;
-import chapter_02_observer_pattern.subject.WeatherData;
+import head_first_design_pattern.chapter_02_observer_pattern.observer.CurrentConditionsDisplay;
+import head_first_design_pattern.chapter_02_observer_pattern.subject.WeatherData;
 
 public class WeatherStation {
 

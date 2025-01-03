@@ -1,7 +1,7 @@
-package chapter_02_observer_pattern.observer;
+package head_first_design_pattern.chapter_02_observer_pattern.observer;
 
-import chapter_02_observer_pattern.DisplayElement;
-import chapter_02_observer_pattern.subject.WeatherData;
+import head_first_design_pattern.chapter_02_observer_pattern.DisplayElement;
+import head_first_design_pattern.chapter_02_observer_pattern.subject.WeatherData;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 

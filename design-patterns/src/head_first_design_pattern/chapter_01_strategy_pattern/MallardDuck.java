@@ -1,9 +1,9 @@
-package chapter_01_intro_design_pattern;
+package head_first_design_pattern.chapter_01_strategy_pattern;
 
-import chapter_01_intro_design_pattern.behaviors.FlyBehavior;
-import chapter_01_intro_design_pattern.behaviors.FlyWithWings;
-import chapter_01_intro_design_pattern.behaviors.Quack;
-import chapter_01_intro_design_pattern.behaviors.QuackBehavior;
+import head_first_design_pattern.chapter_01_strategy_pattern.behaviors.FlyBehavior;
+import head_first_design_pattern.chapter_01_strategy_pattern.behaviors.FlyWithWings;
+import head_first_design_pattern.chapter_01_strategy_pattern.behaviors.Quack;
+import head_first_design_pattern.chapter_01_strategy_pattern.behaviors.QuackBehavior;
 
 public class MallardDuck extends Duck {
 
