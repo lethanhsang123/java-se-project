@@ -1,8 +1,7 @@
-package core_java_volume_2_11ed.streams;
+package core_java_volume_2_11ed.chapter01_streams;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class NonInterference {
 
