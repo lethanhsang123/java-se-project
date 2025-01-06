@@ -1,9 +1,8 @@
-package core_java_volume_2_11ed.chapter02_io.io_streams;
+package core_java_volume_2_11ed.chapter02_io.io_streams.standard;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
 
 public class InputStreamExample {
 
