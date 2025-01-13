@@ -1,4 +1,4 @@
-package object_oriented_design_and_analysis.dougs_dog_doors;
+package object_oriented_design_and_analysis.chapter_02_dougs_dog_doors;
 
 public class Bark {
 
