@@ -11,6 +11,7 @@ public final class InputOutputConstant {
         public static final String UTF8_INPUT_FILE = "src/oracle/input_output_streams/input_output_streams/utf8data.txt";
         public static final String NEW_VERSION_FILE = "src/oracle/input_output_streams/input_output_streams/serialization/newVersion.ser";
         public static final String OLD_VERSION_FILE = "src/oracle/input_output_streams/input_output_streams/serialization/oldVersion.ser";
+        public static final String OBJECT_FILE = "src/oracle/input_output_streams/input_output_streams/object_streams/object.ser";
     }
 
 }
