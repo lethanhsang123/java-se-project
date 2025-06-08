@@ -1,53 +1,122 @@
 # Doug's Dog Door System
 
-This project implements an automated dog door system that can be controlled either by a remote control or by recognizing specific dog barks.
+This project implements an automated dog door system that can be controlled either by a remote control or by recognizing specific dog barks. The system is designed to be secure and convenient, allowing only authorized dogs to enter through voice recognition.
 
 ## System Components
 
-### DogDoor
-The main component that represents the physical dog door. It can be opened and closed, and automatically closes after 5 seconds of being opened. It maintains a list of allowed barks for authentication.
+### 1. DogDoor
+- Core component that manages the physical door state
+- Maintains a list of allowed barks
+- Automatically closes after 5 seconds of being opened
+- Provides methods to open and close the door
 
-### Bark
-Represents a dog's bark sound. Each bark has a unique sound signature that can be used for identification.
+### 2. Bark
+- Represents a dog's bark sound
+- Implements equals() method for bark comparison
+- Case-insensitive bark matching
 
-### BarkRecognizer
-A component that listens for barks and verifies them against the list of allowed barks. If a recognized bark is detected, it automatically opens the dog door.
+### 3. BarkRecognizer
+- Listens for barks and validates them against allowed barks
+- Controls the door based on bark recognition
+- Connected to the DogDoor for operation
 
-### Remote
-A remote control device that can manually open and close the dog door by pressing a button.
+### 4. Remote
+- Provides manual control of the dog door
+- Toggles door state (open/close) when button is pressed
+
+## UML Class Diagram
+
+```mermaid
+classDiagram
+    class DogDoor {
+        -boolean open
+        -List<Bark> allowedBarks
+        +open()
+        +close()
+        +isOpen() boolean
+        +getAllowedBark() List<Bark>
+        +addAllowedBark(Bark)
+    }
+
+    class Bark {
+        -String sound
+        +Bark(String)
+        +getSound() String
+        +equals(Object) boolean
+    }
+
+    class BarkRecognizer {
+        -DogDoor door
+        +BarkRecognizer(DogDoor)
+        +recognize(Bark)
+    }
+
+    class Remote {
+        -DogDoor door
+        +Remote(DogDoor)
+        +pressButton()
+    }
+
+    DogDoor "1" -- "0..*" Bark : contains
+    BarkRecognizer --> DogDoor : controls
+    Remote --> DogDoor : controls
+```
+
+## Sequence Diagram
+
+```mermaid
+sequenceDiagram
+    participant Dog
+    participant BarkRecognizer
+    participant DogDoor
+    participant Timer
+
+    Dog->>BarkRecognizer: Bark
+    BarkRecognizer->>DogDoor: Check allowed barks
+    alt Bark is allowed
+        DogDoor->>DogDoor: open()
+        DogDoor->>Timer: schedule close
+        Timer-->>DogDoor: close() after 5s
+    else Bark is not allowed
+        BarkRecognizer-->>Dog: Access denied
+    end
+```
 
 ## Features
 
-- Automatic door closing after 5 seconds
-- Bark recognition for automatic door opening
-- Manual control via remote
-- Support for multiple allowed barks
-- Thread-safe operation with proper logging
+1. **Automatic Door Control**
+   - Door opens automatically when an authorized bark is recognized
+   - Door closes automatically after 5 seconds
+   - Manual control through remote
 
-## Usage
+2. **Bark Recognition**
+   - Supports multiple authorized barks per dog
+   - Case-insensitive bark matching
+   - Secure access control
 
-1. Create a new `DogDoor` instance
-2. Add allowed barks using `addAllowedBark()`
-3. Create a `BarkRecognizer` instance with the door
-4. Create a `Remote` instance with the door
-5. Use either the remote or bark recognition to control the door
+3. **Remote Control**
+   - Manual override capability
+   - Toggle door state with button press
 
-## Example
+## Usage Example
 
 ```java
+// Create and configure the dog door
 DogDoor door = new DogDoor();
-door.addAllowedBark(new Bark("woof"));
+door.addAllowedBark(new Bark("rowlf"));
+door.addAllowedBark(new Bark("rooowlf"));
 
+// Set up bark recognition
 BarkRecognizer recognizer = new BarkRecognizer(door);
+
+// Set up remote control
 Remote remote = new Remote(door);
 
-// Use remote to open/close door
-remote.pressButton();
-
-// Or use bark recognition
-recognizer.recognize(new Bark("woof"));
+// Use the system
+recognizer.recognize(new Bark("rowlf")); // Door opens
+remote.pressButton(); // Manual control
 ```
 
 ## Thread Safety
 
-The system is designed to be thread-safe and includes proper logging of thread operations for debugging purposes. 
+The system is designed to be thread-safe, with proper synchronization for door operations and bark recognition. All operations are logged with thread information for debugging purposes. 
